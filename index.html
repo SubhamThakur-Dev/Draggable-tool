@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+      <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="style.css">
+      <script>         
+         // Player time
+         var tag = document.createElement('script');
+         tag.src = "https://www.youtube.com/player_api";
+         var firstScriptTag = document.getElementsByTagName('script')[0];
+         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+         var player;
+         function onYouTubePlayerAPIReady() {
+            player = new YT.Player('ytplayer', {
+               height: '200',
+               width: '310',
+               videoId: 'T9CTbO0r-QE'
+            });
+         }
+         window.onclick = () => {/**alert(player.playerInfo.currentTime);**/}
+
+         jQuery(document).ready(
+            // Image click 
+            function() {
+               jQuery("#imgDraggable").click(function() {
+                  jQuery("#draggable").toggle();
+               });
+            // Box Draggable  
+            jQuery(function() {
+               jQuery( "#draggable" ).draggable();
+            });
+            // Close Button 
+            jQuery('.close').on('click', function() {
+               jQuery(this).hide();
+               location.reload();
+            });
+
+            // Open In New Window 
+            jQuery('.pop-outImg').on('click', function() {   
+                 var time = player.playerInfo.currentTime; 
+                 window.open('https://www.youtube.com/watch?autoplay=1&v=T9CTbO0r-QE&t='+time+'s', 'window name', 'window settings');
+                 return true;
+            });
+         });
+      </script>
+   </head>
+   <body>
+      <div class="container">
+         <div id="imgDraggable">
+            <img src="assets/images/tutorial-button.png" class="tutorial-img">
+         </div>
+         <div id="draggable" class="ui-widget-content" style="overflow:hidden !important">
+            <div class="header">
+               <div class="drag-img">
+                  <img src="assets/images/drag_icon.png"><span>DRAG HERE TO MOVE</span>
+               </div>
+               <div class="close">
+                  <img src="assets/images/close.png">
+               </div>
+            </div>
+            <div class="inframe-youtube" id="ytplayer">
+            </div>
+            <div class="pop-outImg">
+              <img src="assets/images/click_to_pop-out.png">
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
+

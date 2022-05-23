@@ -1,0 +1,16 @@
+.container{text-align: center;}
+.header{margin-top: 10px;}    
+#draggable {display:none;width:20%;height:auto;padding:0.5em;background:#eee;margin: 0 auto;border-style: dashed;border-width: 5px;border-color: grey;border-radius: 2%;}
+.estp-tab-wrapper *{overflow: visible !important;}
+.box {position: relative;width: 300px;height: 200px;border: 1px solid black}
+.box .close {position: absolute;right: 5px;top: 5px;cursor: pointer;}
+.box .inner {padding: 5px;}
+.tutorial-img{width: 20%;}
+.close img {width: 7%;float: right;margin-bottom: 50px;}
+.drag-img img {width: 7%;float: left;margin-bottom: 50px;}
+.drag-img span {font-size: 12px;float: left;font-weight: 700;font-family: sans-serif;}
+.pop-outImg img {width: 50%;float: right;margin-top: -4px;margin-right: 34px;height: 35px;}
+.pop-outImg img:hover {cursor: pointer;}
+.drag-img img:hover {cursor: pointer;}
+.close img:hover {cursor: pointer;}
+iframe#ytplayer {margin-top: 20px;}
